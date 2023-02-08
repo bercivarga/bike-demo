@@ -14,7 +14,7 @@ import {Suspense, useCallback} from 'react';
 const MAIN_ANIMATION_INDEX = 0;
 
 const GLTF_PATH = "/models/carbon_frame_bike/scene.gltf";
-const HDRI_PATH = "/hdris/fouriesburg_mountain_midday_2k.hdr";
+const HDRI_PATH = "/hdris/fouriesburg_mountain_midday_4k_cyberpunk.hdr";
 
 // create a bike wheel with just html and css and animate it
 function BikeWheel() {
@@ -100,8 +100,9 @@ function App() {
                         <PerspectiveCamera makeDefault position={[0, 7, 15]} />
                         <OrbitControls maxPolarAngle={Math.PI / 2 - 0.1} enableZoom={true} target={[0, 3, 0]} />
                         <Environment files={HDRI_PATH} background ground resolution={4000} />
-                        <ambientLight color={"#FFFFFF"} intensity={1} />
-                        <pointLight position={[10, 4, 10]} castShadow={true} />
+                        <ambientLight color={"#FFC0CB"} intensity={2} />
+                        <pointLight position={[10, 4, 10]} color={"#FFC0CB"} intensity={2} castShadow={true} />
+                        <pointLight position={[-10, 7, 2]} color={"#00FFFF"} intensity={2} castShadow={true} />
                         <Model />
                     </Suspense>
                 </Canvas>
